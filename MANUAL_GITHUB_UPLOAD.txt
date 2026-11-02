@@ -1,0 +1,9 @@
+MANUAL GITHUB UPLOAD (no ChatGPT connection needed)
+1. Log in to https://github.com and finish any required two-factor authentication on GitHub itself.
+2. Top right + > New repository. Name e.g. comp8240-research-project, select Public, Create repository.
+3. Select Add file > Upload files. Drag the CONTENTS of this folder, not the ZIP file.
+4. Enter a commit message and choose Commit changes.
+5. Check the page loads in a private/incognito browser window.
+6. Copy your real repository URL into the LaTeX report footnote before submitting the PDF.
+7. For official ACL, replace preview `acl.sty` and compile in the official ACL Overleaf template.
+SECURITY: Never share GitHub password, authenticator codes or recovery keys.
