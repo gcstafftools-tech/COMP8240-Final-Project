@@ -1,0 +1,15 @@
+Subject: COMP8240 final project — confirmation of independently selected replication paper
+
+Dear COMP8240 teaching team,
+
+I am preparing my final project report for COMP8240 and would like to confirm that my independently selected source paper is acceptable as a novel project:
+
+R. A. Fisher (1936), "The Use of Multiple Measurements in Taxonomic Problems" (DOI: 10.1111/j.1469-1809.1936.tb02137.x).
+
+The project numerically reproduces the published Iris discriminant coefficients and within-class calculations. It also conducts modern stratified cross-validation on the Iris, Wine and independently sourced Wisconsin Diagnostic Breast Cancer datasets, with explicit limitations and ethical discussion. I recognise that this is not a rerun of historical software.
+
+Could you please confirm whether this paper and replication approach satisfy the novel-project criteria, or whether I am required to use the designated default project paper?
+
+Kind regards,
+[Student name]
+[Student ID, if required]

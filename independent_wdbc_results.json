@@ -1,0 +1,44 @@
+{
+  "lda": {
+    "accuracy": {
+      "mean": 0.9560642757335817,
+      "sd": 0.018587932259748946
+    },
+    "macro_f1": {
+      "mean": 0.9517059881522927,
+      "sd": 0.020971920080558756
+    }
+  },
+  "majority": {
+    "accuracy": {
+      "mean": 0.6274181027790716,
+      "sd": 0.003948679172659169
+    },
+    "macro_f1": {
+      "mean": 0.3855261362344112,
+      "sd": 0.001491531748782473
+    }
+  },
+  "dataset": {
+    "name": "Wisconsin Diagnostic Breast Cancer",
+    "source": "UCI Machine Learning Repository, scikit-learn load_breast_cancer",
+    "records": 569,
+    "features": 30,
+    "classes": {
+      "malignant": 212,
+      "benign": 357
+    },
+    "newly_collected": false,
+    "independent_of_iris_wine": true,
+    "license_check": "See UCI dataset page; verify dataset conditions before redistribution"
+  },
+  "protocol": {
+    "cv": "RepeatedStratifiedKFold",
+    "n_splits": 5,
+    "n_repeats": 10,
+    "random_state": 42,
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "sklearn": "1.8.0"
+  }
+}

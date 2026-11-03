@@ -1,0 +1,79 @@
+{
+  "evaluation": "archived output versus independently assigned evidence-based reference labels",
+  "n_items": 10,
+  "n_agree": 10,
+  "agreement_fraction": 1.0,
+  "reference_distribution": {
+    "Supported": 4,
+    "Unsupported": 5,
+    "Unverifiable": 1
+  },
+  "judge_distribution": {
+    "Supported": 4,
+    "Unsupported": 5,
+    "Unverifiable": 1
+  },
+  "rows": [
+    {
+      "id": 1,
+      "reference_label": "Supported",
+      "archived_judge_label": "Supported",
+      "agreement": true
+    },
+    {
+      "id": 2,
+      "reference_label": "Unsupported",
+      "archived_judge_label": "Unsupported",
+      "agreement": true
+    },
+    {
+      "id": 3,
+      "reference_label": "Supported",
+      "archived_judge_label": "Supported",
+      "agreement": true
+    },
+    {
+      "id": 4,
+      "reference_label": "Unsupported",
+      "archived_judge_label": "Unsupported",
+      "agreement": true
+    },
+    {
+      "id": 5,
+      "reference_label": "Supported",
+      "archived_judge_label": "Supported",
+      "agreement": true
+    },
+    {
+      "id": 6,
+      "reference_label": "Unsupported",
+      "archived_judge_label": "Unsupported",
+      "agreement": true
+    },
+    {
+      "id": 7,
+      "reference_label": "Unsupported",
+      "archived_judge_label": "Unsupported",
+      "agreement": true
+    },
+    {
+      "id": 8,
+      "reference_label": "Unverifiable",
+      "archived_judge_label": "Unverifiable",
+      "agreement": true
+    },
+    {
+      "id": 9,
+      "reference_label": "Supported",
+      "archived_judge_label": "Supported",
+      "agreement": true
+    },
+    {
+      "id": 10,
+      "reference_label": "Unsupported",
+      "archived_judge_label": "Unsupported",
+      "agreement": true
+    }
+  ],
+  "important_limit": "Scoring can be reproduced; fresh LLM generation cannot be reproduced locally without a model endpoint and prompt execution; labels are not independently collected human annotation."
+}

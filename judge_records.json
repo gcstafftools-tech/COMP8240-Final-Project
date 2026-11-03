@@ -1,0 +1,18 @@
+{
+ "scope":"One-session LLM-as-judge audit of factual prose claims, not model classification predictions",
+ "judge":"GPT-6 (ChatGPT conversational evaluation, 2026-11-02); outputs transcribed during preparation; no API-based replication available",
+ "rubric":"Supported iff claim follows from the project data and methodology; Unsupported if directly contradicted; Unverifiable for claims that require unprovided evidence",
+ "items":[
+  {"id":1,"claim":"The Iris loader contains 150 observations.","judgement":"Supported","basis":"load_iris shape"},
+  {"id":2,"claim":"Iris has thirteen measured input features.","judgement":"Unsupported","basis":"load_iris has four features"},
+  {"id":3,"claim":"The Wine dataset has 178 observations.","judgement":"Supported","basis":"load_wine shape"},
+  {"id":4,"claim":"The Wine dataset was independently collected for this assignment.","judgement":"Unsupported","basis":"it was loaded from sklearn"},
+  {"id":5,"claim":"The study uses ten repeats of five-fold stratified cross-validation.","judgement":"Supported","basis":"experiment.py CV definition"},
+  {"id":6,"claim":"Fisher's 1936 paper reported the same 97.87 percent held-out cross-validation accuracy.","judgement":"Unsupported","basis":"this is a modern evaluation protocol"},
+  {"id":7,"claim":"An Iris-trained classifier can directly classify Wine without changing the feature schema.","judgement":"Unsupported","basis":"feature dimensions 4 versus 13"},
+  {"id":8,"claim":"The public repository is accessible to every marker without login.","judgement":"Unverifiable","basis":"link exists in conversation, but access for every marker not tested"},
+  {"id":9,"claim":"For the Iris LDA confusion matrix, errors occur between versicolor and virginica.","judgement":"Supported","basis":"iris confusion matrix"},
+  {"id":10,"claim":"The evidence establishes causal superiority of LDA in all botanical applications.","judgement":"Unsupported","basis":"observational benchmark cannot support universal causal claim"}
+ ],
+ "limitations":"No repeated judge sampling, no human comparison, no judge API, no independent verification or inter-rater reliability; judge evaluations are a small demonstration only."
+}

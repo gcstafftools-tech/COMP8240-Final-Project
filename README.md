@@ -1,38 +1,40 @@
-# COMP8240 empirical research case study
+# COMP8240 project: Fisher replication, independent evaluation, and LLM audit
 
-**Scope:** Reproducible *modern reconstruction* of Fisher-style linear discriminant analysis using the Iris classification dataset and method-level evaluation on Wine. This is **not** a numerical replication of the exact 1936 publication, and no LLM-as-judge experiment has been executed. Do not describe it otherwise.
+Research source: Fisher (1936) https://doi.org/10.1111/j.1469-1809.1936.tb02137.x
 
-## Files
+Official ACL LaTeX report `main.pdf` (10 total pages) and source `main.tex`.
 
-- `report.pdf` – report preview (10 pages; uses a **non-official** ACL-style compatibility package).
-- `main.tex` – LaTeX report source.
-- `acl.sty` – LOCAL PREVIEW-ONLY compatibility style, **not** official ACL.
-- `experiment.py` – reproducible comparison, including LDA, logistic regression and majority baseline.
-- `results.json` – actual saved metrics and software versions.
-- `iris_confusion.pdf`, `wine_confusion.pdf` – confusion matrix figures.
+## Original versus new data
+- Iris: classic Fisher source; reconstruct published binary discriminant coefficients.
+- Wine: separate UCI dataset, 178 older observations; LDA algorithm re-fit and evaluated.
+- `constructed_wine.csv`: labelled simulated perturbation of original Wine samples; **not new physical samples**.
+- `independent_wdbc_curated.csv`: a **newly curated file from an independently collected existing UCI dataset**, not previously used in the study (569 observations, 30 features, 2 classes); no new patients recruited. Source: https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic . This is an educational statistical evaluation, **not a diagnostic model**.
 
-## Reproduction
-
-Create a Python environment and run:
+## Recreate the evidence
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
+python historical_replication.py
 python experiment.py
+python construct_and_evaluate.py
+python independent_data.py
+python score_judge.py
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
 ```
 
-This overwrites results.json and the plots and prints metrics. Repeated stratified fivefold validation with 10 repeats, seed 42. Note that different library versions can introduce small numerical changes.
+Results in `results.json`, `historical_replication_results.json`, `constructed_data_results.json`, `independent_wdbc_results.json`, `judge_scored_results.json`. The experimental software versions and CV seed are recorded by scripts.
 
-## Publication / report instructions
+## LLM-as-judge: what is and isn't independently repeatable
 
-1. Create a **public** GitHub repository, e.g., `comp8240-research-project`.
-2. Upload these files via `Add file > Upload files > Commit changes`.
-3. Open the public repository in a browser while signed out to confirm it is reachable.
-4. Insert the real repo URL into the final report as a footnote; DO NOT use an invented placeholder as though it is live.
-5. Move `main.tex`, figures and references into the **official ACL template** from https://github.com/acl-org/acl-style-files ; the included `acl.sty` is not official. Compile and recheck main-body page limit.
-6. Independently confirm all citations, experimental interpretations and your institution's academic-integrity requirements.
+`judge_records.json` contains a previously archived **single conversational LLM evaluation** of ten factual claims. `JUDGE_PROMPT.txt` describes the judge instructions; `score_judge.py` reproduces the scoring for the archive. The archived session was not collected through an API and cannot be rerun exactly offline. `rerun_judge_api.py` implements an optional live model API rerun, writing new response records rather than overwriting the archive. **That script has not been run here** and requires the operator's authorised `OPENAI_API_KEY` and `JUDGE_MODEL`. Never commit credentials. Exact LLM outputs are not guaranteed to be deterministic, even with matching prompts.
 
-## Important limitations
+The ten reference labels were curated during the study and are **not** a blinded independent human annotation sample. The 10/10 agreement in the archive is descriptive, not validated judge accuracy.
 
-The published Fisher (1936) paper provides no Python source to rerun. The present protocol evaluates a modern LDA implementation and does not reproduce a historically matched original-paper score. The Wine dataset is new **to this evaluation**, not newly collected. Label comparisons are algorithmic and an LLM judge was not executed. These are material gaps against the assignment rubric, not completed criteria.
+## Lecturer approval and submission
+
+The researcher independently selected a historical source paper. **Lecturer approval is not established.** See `LECTURER_APPROVAL_EMAIL.txt` for the request to send through the university's usual channel. The teaching team alone can decide whether this is an acceptable novel project.
+
+The report's original numerical replication does not rerun historical source code, which was not provided in the 1936 paper. This limitation is acknowledged in the report.
+
+To update the public GitHub project, upload extracted files to https://github.com/gcstafftools-tech/COMP8240-Final-Project and commit. Check that all new CSV, JSON and Python scripts appear. Submit `main.pdf` only after checking the above academic requirements and any AI disclosure rules.

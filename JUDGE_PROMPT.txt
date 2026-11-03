@@ -1,0 +1,12 @@
+Archived LLM-as-judge protocol (small exploratory factual-claim evaluation)
+
+Judge name recorded in archive: GPT-6 in ChatGPT conversational session; approximate session date: 2026-11-02.
+Judge task: classify each factual claim as Supported, Unsupported or Unverifiable.
+Definitions:
+- Supported: directly corroborated by supplied dataset, code, or clearly stated empirical results.
+- Unsupported: contradicted by those materials.
+- Unverifiable: evidence available in the project is insufficient to make either determination.
+
+Material the judge should see: experiment.py, results.json, historical_replication.py, historical_replication_results.json, dataset descriptions, and ten claim strings in judge_records.json. No access to the claim's reference label should be granted while judging. Respond with JSON containing for each claim ID a judgement label and a one-sentence basis.
+
+The saved judge_records.json is an ARCHIVED conversational model judgement, not an API-produced run reproducible from this folder. The score_judge.py script deterministically regenerates scoring and compares it to explicit reference labels. A repeat model generation requires access to a comparable external model, and outputs may vary. The report does not claim independent human annotation or independent validation of reliability.

@@ -1,0 +1,27 @@
+{
+  "source": "sklearn.datasets.load_wine (UCI Wine), 178 samples, 13 features",
+  "constructed_data": "one derived record per original; Gaussian measurement perturbation at 1% of original per-feature sample SD; 8% independently masked cells; no new biological/chemical samples",
+  "seed": 8240,
+  "missing_cells": 163,
+  "total_cells": 2314,
+  "missing_fraction": 0.07044079515989628,
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "sklearn": "1.8.0"
+  },
+  "original_wine": {
+    "accuracy_mean": 0.9893492063492064,
+    "accuracy_sd": 0.020232990965665054,
+    "macro_f1_mean": 0.9893825805877117,
+    "macro_f1_sd": 0.01984211771520059,
+    "majority_accuracy_mean": 0.399047619047619
+  },
+  "constructed_wine": {
+    "accuracy_mean": 0.9454920634920636,
+    "accuracy_sd": 0.03514572448679964,
+    "macro_f1_mean": 0.9466825628767497,
+    "macro_f1_sd": 0.0343148799165076,
+    "majority_accuracy_mean": 0.399047619047619
+  }
+}
